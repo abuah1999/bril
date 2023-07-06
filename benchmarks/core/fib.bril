@@ -1,0 +1,18 @@
+# Calculates nth fibonnaci number
+
+# ARGS: 12
+@main (n: int) {
+	v1: int = const 1;
+	v2: int = const 1;
+	count: int = const 1;
+.fb_next:
+	v3 = id v2;
+	v2 = add v1 v2;
+	v1 = id v3;
+	one: int = const 1;
+	count = add count one;
+	b: bool = eq count n;
+	br b .fb_end .fb_next;
+.fb_end:
+	print v1;
+}
