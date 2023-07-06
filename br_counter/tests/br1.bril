@@ -1,0 +1,20 @@
+@main (n1: int, n2: int, n3: int) {
+	b1: bool = gt n1 n2;
+	br b1 .n1 .n2;
+.n1:
+	b2: bool = gt n1 n3;
+	n0: int = id n1;
+	jmp .cmp;
+.n2:
+	b2: bool = gt n2 n3;
+	n0: int = id n2;
+.cmp:
+	br b2 .n0 .n3;
+.n0:
+	print n0;
+	jmp .end;
+.n3:
+	print n3;
+.end:
+	nop;
+}
